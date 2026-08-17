@@ -18,7 +18,7 @@ from herramientas import (
 # ─────────────────────────────
 
 DURACION = 5
-FRECUENCIA = 44100
+FRECUENCIA = 16000
 DISPOSITIVO = 1
 
 
@@ -131,6 +131,26 @@ def escuchar():
     print("Fin de la grabación.")
 
     return archivo
+
+
+# ─────────────────────────────
+# Guardar el audio
+# ─────────────────────────────
+
+def guardar_audio(audio):
+
+    archivo = "voz.wav"
+
+    write(
+        archivo,
+        FRECUENCIA,
+        audio
+    )
+
+    return archivo
+
+
+
 # ─────────────────────────────
 # TRANSCRIBIR
 # ─────────────────────────────
