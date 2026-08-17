@@ -3,6 +3,7 @@ from scipy.io.wavfile import write
 from faster_whisper import WhisperModel
 from ollama import chat
 import numpy as np
+from wakeword import esperar_wakeword
 
 from herramientas import (
     abrir_youtube,
@@ -195,15 +196,18 @@ def ejecutar_herramienta(nombre):
 
 
 # ─────────────────────────────
-# JARVIS
+# JARVIS - Principal
 # ─────────────────────────────
 
 
 print("JARVIS, Está listo. ")
 
 
-
 while True:
+
+    esperar_wakeword()
+
+    print("Jarvis activado.")
 
     archivo = escuchar()
 
@@ -212,7 +216,6 @@ while True:
     print("Entendí:", texto)
 
     if not texto:
-        print("No escuché nada.")
         continue
 
     if "salir" in texto.lower():
