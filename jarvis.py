@@ -225,11 +225,12 @@ print("JARVIS, Está listo. ")
 
 while True:
 
-    esperar_wakeword()
+    archivo = esperar_wakeword()
 
-    print("Jarvis activado.")
+    if archivo is None:
+        continue
 
-    archivo = escuchar()
+    print("Comando recibido.")
 
     texto = transcribir(archivo)
 
@@ -239,7 +240,7 @@ while True:
         continue
 
     if "salir" in texto.lower():
-        print("Jarvis apagándose...")
+        print("👋 Jarvis apagándose...")
         break
 
     herramienta = preguntar_ia(texto)

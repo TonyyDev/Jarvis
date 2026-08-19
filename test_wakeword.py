@@ -5,4 +5,4 @@ while True:
 
     esperar_wakeword()
 
-    print("⚡ Jarvis activado!")
+    print("Jarvis activado!")
